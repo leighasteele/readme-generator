@@ -4,7 +4,7 @@ const inquirer = require("inquirer");
 
 const questions = inquirer.createQuestionModule();
 // TODO: Create an array of questions for user input
-prompt([
+questions([
   {
     name: "title",
     message: "Enter a title for your README.",
@@ -39,15 +39,36 @@ prompt([
   },
 ]).then((answers) => {
   console.log(answers);
-  const template = `
-    ${answers.title}
-    ${answers.description}
-    ${answers.installation}
-    ${answers.usage}
-    ${answers.license}
-    ${answers.contriibution}
-    ${answers.tests}
-    ${answers.questions}
+  const template = `# ${answers.title}
+
+  ## Description
+  
+  ${answers.description}
+
+  ## Installation
+  
+  ${answers.installation}
+
+  ## Usage
+  
+  ${answers.usage}
+
+  ## License
+  
+  ${answers.license}
+
+  ## Contribution Guidelines
+  
+  ${answers.contribution}
+
+  ## Test Instructions
+  
+  ${answers.tests}
+
+  ## Questions or Comments?
+  
+  ${answers.questions}
+
     `;
   if (fs.existsSync("output")) {
     fs.writeFileSync("output/product.md", template);

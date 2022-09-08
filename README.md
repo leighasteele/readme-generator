@@ -1,9 +1,5 @@
 # README.md Generator
 
-## Table of Contents
-[Description](#description)
-
-[Visuals](#visuals)
 
 ## Description
 

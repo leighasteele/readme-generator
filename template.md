@@ -1,18 +1,29 @@
 # README.md Generator
 
-## Table of Contents
-[Description](#description)
-
-[Visuals](#visuals)
-
 ## Description
 
-[Link to live site](https://leighasteele.github.io/readme-generator/)
+Lorem Ipsum
 
-Lorem ipsum 
+## Installation
 
+Lorem Ipsum
 
-## Visuals
+## Usage
 
-![Screenshot of terminal]()
-![Screenshot of product]()
+Lorem Ipsum
+
+## License
+
+Lorem Ipsum
+
+## Contribution Guidelines
+
+Lorem Ipsum
+
+## Test Instructions
+
+Lorem Ipsum
+
+## Questions?
+
+Lorem Ipsum
