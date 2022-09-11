@@ -15,7 +15,7 @@ questions([
   },
   {
     name: "installation",
-    message: "Enter an installation process.",
+    message: "Enter any installation commands.",
   },
   {
     name: "usage",
@@ -31,7 +31,7 @@ questions([
   },
   {
     name: "tests",
-    message: "Enter any tests.",
+    message: "Enter commands to run tests.",
   },
   {
     name: "questions",
