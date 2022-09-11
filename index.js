@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
-
+const generateMarkdown = require('./generateMarkdown.js');
 const questions = inquirer.createQuestionModule();
 // TODO: Create an array of questions for user input
 questions([
@@ -37,43 +37,23 @@ questions([
     name: "questions",
     message: "Enter contact information.",
   },
-]).then((answers) => {
-  console.log(answers);
-  const template = `# ${answers.title}
+]);
 
-  ## Description
-  
-  ${answers.description}
-
-  ## Installation
-  
-  ${answers.installation}
-
-  ## Usage
-  
-  ${answers.usage}
-
-  ## License
-  
-  ${answers.license}
-
-  ## Contribution Guidelines
-  
-  ${answers.contribution}
-
-  ## Test Instructions
-  
-  ${answers.tests}
-
-  ## Questions or Comments?
-  
-  ${answers.questions}
-
-    `;
+// TODO: Create a function to write README file
+function writeMD(fileName, answers) {
   if (fs.existsSync("output")) {
     fs.writeFileSync("output/product.md", template);
   } else {
     fs.mkdirSync("output");
     fs.writeFileSync("output/product.md", template);
+  }};
+
+  // TODO: Create a function to initialize app
+  function initialize() {
+    questions(questions).then((answers) => {
+      console.log(answers);
+      writeMD('template.md', answers);
+    });
   }
-});
+
+  initialize();
