@@ -1,10 +1,10 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateMarkdown = require('./generateMarkdown.js');
+const generateMarkdown = require("./generateMarkdown.js");
 const questions = inquirer.createQuestionModule();
 // TODO: Create an array of questions for user input
-qs([
+const qs = [
   {
     name: "title",
     message: "Enter a title for your README.",
@@ -37,23 +37,22 @@ qs([
     name: "questions",
     message: "Enter contact information.",
   },
-]);
+];
 
 // TODO: Create a function to write README file
 function writeMD(fileName, answers) {
-  if (fs.existsSync("output")) {
-    fs.writeFileSync("output/product.md", template);
-  } else {
+  if (!fs.existsSync("output")) {
     fs.mkdirSync("output");
-    fs.writeFileSync("output/product.md", template);
-  }};
-
-  // TODO: Create a function to initialize app
-  function initialize() {
-    questions(qs).then((answers) => {
-      console.log(answers);
-      writeMD('template.md', answers);
-    });
   }
+  fs.writeFileSync(`output/${fileName}`, generateMarkdown(answers));
+}
 
-  initialize();
+// TODO: Create a function to initialize app
+function initialize() {
+  questions(qs).then((answers) => {
+    console.log(answers);
+    writeMD("template.md", answers);
+  });
+}
+
+initialize();
