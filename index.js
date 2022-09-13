@@ -51,7 +51,7 @@ function writeMD(fileName, answers) {
 function initialize() {
   questions(qs).then((answers) => {
     console.log(answers);
-    writeMD("template.md", answers);
+    writeMD("README.md", answers);
   });
 }
 
