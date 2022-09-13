@@ -2,7 +2,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./generateMarkdown.js");
-const questions = inquirer.createQuestionModule();
+//const questions = inquirer.createQuestionModule();
 // TODO: Create an array of questions for user input
 const qs = [
   {
@@ -49,7 +49,7 @@ function writeMD(fileName, answers) {
 
 // TODO: Create a function to initialize app
 function initialize() {
-  questions(qs).then((answers) => {
+  inquirer.prompt(qs).then((answers) => {
     console.log(answers);
     writeMD("README.md", answers);
   });
