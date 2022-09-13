@@ -4,7 +4,7 @@ const inquirer = require("inquirer");
 const generateMarkdown = require('./generateMarkdown.js');
 const questions = inquirer.createQuestionModule();
 // TODO: Create an array of questions for user input
-questions([
+qs([
   {
     name: "title",
     message: "Enter a title for your README.",
@@ -50,7 +50,7 @@ function writeMD(fileName, answers) {
 
   // TODO: Create a function to initialize app
   function initialize() {
-    questions(questions).then((answers) => {
+    questions(qs).then((answers) => {
       console.log(answers);
       writeMD('template.md', answers);
     });
